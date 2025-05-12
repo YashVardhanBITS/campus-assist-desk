@@ -1,73 +1,85 @@
-# Welcome to your Lovable project
 
-## Project info
+# Campus Help Desk - Online Help Desk System
 
-**URL**: https://lovable.dev/projects/bbe57231-433a-47da-9c81-3aa850850a8e
+A comprehensive intranet-based application for managing and tracking service requests for various campus facilities. This system streamlines the workflow between request creators and facility staff.
 
-## How can I edit this code?
+## Features
 
-There are several ways of editing your application.
+- User authentication (login/register/password change)
+- Request creation and tracking
+- Facility management
+- Role-based access control (students, faculty, facility-heads, assignees)
+- Status tracking for service requests
+- Comment system for updates
+- Dashboard with statistics
+- Help documentation
 
-**Use Lovable**
+## Project Setup
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/bbe57231-433a-47da-9c81-3aa850850a8e) and start prompting.
+### Prerequisites
 
-Changes made via Lovable will be committed automatically to this repo.
+- Node.js (v14 or above)
+- npm (comes with Node.js)
 
-**Use your preferred IDE**
+### Installation and Running Locally
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+1. Clone this repository:
+```bash
+git clone https://github.com/your-username/campus-help-desk.git
+cd campus-help-desk
+```
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+2. Install the dependencies:
+```bash
+npm install
+```
 
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+3. Start the development server:
+```bash
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+4. Open your browser and navigate to:
+```
+http://localhost:8080
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## How It Works
 
-**Use GitHub Codespaces**
+### User Roles
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+- **Students/Faculty/Staff**: Can create new requests, track their requests, and close their own requests
+- **Facility Heads**: Can view all requests for their facility and assign them to staff members
+- **Assignees**: Can update the status of requests assigned to them
+- **Admin**: Can manage users, facilities, and view all requests
 
-## What technologies are used for this project?
+### Testing Credentials
 
-This project is built with:
+For testing, you can use these dummy accounts:
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+- **Student**: john@campus.edu / password123
+- **Faculty**: jane@campus.edu / password123
+- **Admin**: admin@campus.edu / admin123
+- **Facility Head**: lab@campus.edu / password123
+- **Maintenance Staff**: maintenance@campus.edu / password123
 
-## How can I deploy this project?
+### Backend Integration
 
-Simply open [Lovable](https://lovable.dev/projects/bbe57231-433a-47da-9c81-3aa850850a8e) and click on Share -> Publish.
+This frontend project is designed to be integrated with a custom backend API. The current version uses dummy data for demonstration purposes. When implementing your backend:
 
-## Can I connect a custom domain to my Lovable project?
+1. Edit the service files in `src/services/api.js` to point to your actual API endpoints
+2. Uncomment the API call code that's currently commented in each function
+3. Update the authentication mechanism to work with your backend
 
-Yes, you can!
+## Project Structure
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+- `/src/components`: Reusable UI components
+- `/src/pages`: Main page components
+- `/src/context`: React context for state management
+- `/src/services`: API service functions
+- `/src/utils`: Utility functions
+- `/src/data`: Dummy data (for demonstration)
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+## License
+
+This project is licensed under the MIT License.
